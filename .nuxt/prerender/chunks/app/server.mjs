@@ -442,7 +442,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0,
-    component: () => import('./_nuxt/index-6c73210b.mjs').then((m) => m.default || m)
+    component: () => import('./_nuxt/index-4881e2ca.mjs').then((m) => m.default || m)
   },
   {
     name: "single-id",

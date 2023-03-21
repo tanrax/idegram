@@ -1,8 +1,8 @@
 export default {
-  "_nuxt-link.c4028119.js": {
+  "_nuxt-link.b66650eb.js": {
     "resourceType": "script",
     "module": true,
-    "file": "nuxt-link.c4028119.js",
+    "file": "nuxt-link.b66650eb.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
@@ -16,9 +16,9 @@ export default {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error-404.9e96789a.js",
+    "file": "error-404.54a3a00d.js",
     "imports": [
-      "_nuxt-link.c4028119.js",
+      "_nuxt-link.b66650eb.js",
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -37,7 +37,7 @@ export default {
     "resourceType": "script",
     "module": true,
     "css": [],
-    "file": "error-500.edf324a2.js",
+    "file": "error-500.7cd996d5.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -54,16 +54,16 @@ export default {
     "dynamicImports": [
       "virtual:nuxt:/home/andros/workspace/pets/idegram/.nuxt/error-component.mjs"
     ],
-    "file": "entry.5c378a9f.js",
+    "file": "entry.d96bb2c1.js",
     "isEntry": true,
     "src": "node_modules/nuxt/dist/app/entry.js"
   },
   "pages/blog.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "blog.6e878e8e.js",
+    "file": "blog.6731eb0d.js",
     "imports": [
-      "_nuxt-link.c4028119.js",
+      "_nuxt-link.b66650eb.js",
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -72,9 +72,9 @@ export default {
   "pages/index.vue": {
     "resourceType": "script",
     "module": true,
-    "file": "index.d35faa8b.js",
+    "file": "index.b3d9e993.js",
     "imports": [
-      "_nuxt-link.c4028119.js",
+      "_nuxt-link.b66650eb.js",
       "node_modules/nuxt/dist/app/entry.js"
     ],
     "isDynamicEntry": true,
@@ -83,7 +83,7 @@ export default {
   "pages/single/[id].vue": {
     "resourceType": "script",
     "module": true,
-    "file": "_id_.235acbf4.js",
+    "file": "_id_.937271d4.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],
@@ -97,7 +97,7 @@ export default {
       "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
       "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
     ],
-    "file": "error-component.2941e702.js",
+    "file": "error-component.1fa943e9.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ],

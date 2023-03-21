@@ -1,41 +1,41 @@
-import { _ as __nuxt_component_0 } from './nuxt-link-349f040b.mjs';
-import { ssrRenderAttrs, ssrRenderComponent, ssrRenderList, ssrInterpolate } from 'file:///home/andros/workspace/pets/idegram/node_modules/vue/server-renderer/index.mjs';
-import { withAsyncContext, withCtx, createTextVNode, unref, useSSRContext, computed, reactive, ref, getCurrentInstance, onServerPrefetch } from 'file:///home/andros/workspace/pets/idegram/node_modules/vue/index.mjs';
-import { _ as _export_sfc, u as useNuxtApp, c as createError, a as useRequestFetch } from '../server.mjs';
-import { hash } from 'file:///home/andros/workspace/pets/idegram/node_modules/ohash/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/ufo/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/ofetch/dist/node.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/hookable/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/unctx/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/@unhead/ssr/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/unhead/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/@unhead/shared/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/vue-router/dist/vue-router.node.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/h3/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/defu/dist/defu.mjs';
-import '../../nitro/nitro-prerenderer.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/node-fetch-native/dist/polyfill.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/destr/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/unenv/runtime/fetch/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/scule/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/unstorage/dist/index.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/unstorage/drivers/fs.mjs';
-import 'file:///home/andros/workspace/pets/idegram/node_modules/radix3/dist/index.mjs';
-
-const _sfc_main$1 = {};
-function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
-  _push(`<!--[--><hr><p><strong>Nombre:</strong> ${ssrInterpolate(_ctx.name)}</p><hr><!--]-->`);
-}
+import { _ as __nuxt_component_0 } from "./nuxt-link-349f040b.js";
+import { ssrInterpolate, ssrRenderAttrs, ssrRenderComponent, ssrRenderList } from "vue/server-renderer";
+import { useSSRContext, ref, getCurrentInstance, onServerPrefetch, unref, computed, reactive, withAsyncContext, withCtx, createTextVNode } from "vue";
+import "hookable";
+import { hash } from "ohash";
+import { u as useNuxtApp, c as createError, a as useRequestFetch } from "../server.mjs";
+import "destr";
+import "ufo";
+import "ofetch";
+import "#internal/nitro";
+import "unctx";
+import "@unhead/ssr";
+import "unhead";
+import "@unhead/shared";
+import "vue-router";
+import "h3";
+import "defu";
+const _sfc_main$1 = {
+  __name: "User",
+  __ssrInlineRender: true,
+  props: {
+    name: String
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<!--[--><hr><p><strong>Nombre:</strong> ${ssrInterpolate(__props.name)}</p><hr><!--]-->`);
+    };
+  }
+};
 const _sfc_setup$1 = _sfc_main$1.setup;
 _sfc_main$1.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/User.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const __nuxt_component_1 = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["ssrRender", _sfc_ssrRender]]);
+const __nuxt_component_1 = _sfc_main$1;
 const getDefault = () => null;
 function useAsyncData(...args) {
-  var _a2, _b, _c, _d, _e, _f;
   var _a;
   const autoKey = typeof args[args.length - 1] === "string" ? args.pop() : void 0;
   if (typeof args[0] !== "string") {
@@ -48,16 +48,16 @@ function useAsyncData(...args) {
   if (typeof handler !== "function") {
     throw new TypeError("[nuxt] [asyncData] handler must be a function.");
   }
-  options.server = (_a2 = options.server) != null ? _a2 : true;
-  options.default = (_b = options.default) != null ? _b : getDefault;
-  options.lazy = (_c = options.lazy) != null ? _c : false;
-  options.immediate = (_d = options.immediate) != null ? _d : true;
+  options.server = options.server ?? true;
+  options.default = options.default ?? getDefault;
+  options.lazy = options.lazy ?? false;
+  options.immediate = options.immediate ?? true;
   const nuxt = useNuxtApp();
   const getCachedData = () => nuxt.isHydrating ? nuxt.payload.data[key] : nuxt.static.data[key];
   const hasCachedData = () => getCachedData() !== void 0;
   if (!nuxt._asyncData[key]) {
     nuxt._asyncData[key] = {
-      data: ref((_f = (_e = getCachedData()) != null ? _e : (_a = options.default) == null ? void 0 : _a.call(options)) != null ? _f : null),
+      data: ref(getCachedData() ?? ((_a = options.default) == null ? void 0 : _a.call(options)) ?? null),
       pending: ref(!hasCachedData()),
       error: ref(nuxt.payload._errors[key] ? createError(nuxt.payload._errors[key]) : null)
     };
@@ -96,13 +96,12 @@ function useAsyncData(...args) {
       asyncData.data.value = result;
       asyncData.error.value = null;
     }).catch((error) => {
-      var _a3;
-      var _a22;
+      var _a2;
       if (promise.cancelled) {
         return nuxt._asyncDataPromises[key];
       }
       asyncData.error.value = error;
-      asyncData.data.value = unref((_a3 = (_a22 = options.default) == null ? void 0 : _a22.call(options)) != null ? _a3 : null);
+      asyncData.data.value = unref(((_a2 = options.default) == null ? void 0 : _a2.call(options)) ?? null);
     }).finally(() => {
       if (promise.cancelled) {
         return;
@@ -234,6 +233,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/index.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-
-export { _sfc_main as default };
-//# sourceMappingURL=index-6c73210b.mjs.map
+export {
+  _sfc_main as default
+};
+//# sourceMappingURL=index-4881e2ca.js.map

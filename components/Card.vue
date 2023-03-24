@@ -1,6 +1,11 @@
 <template>
-    <div>
-	<img alt="" :src="urlPublic" class="img">
+    <div class="ratio ratio-4x3">
+	<img alt="" :src="urlPublic" class="
+		  img
+		  object-fit-cover
+		  border
+		  rounded
+		  ">
     </div>
 </template>
 
@@ -17,6 +22,7 @@
  })
 
  onMounted(async () => {
+
      const { data } = await supabase
 	 .storage
 	 .from('photos')

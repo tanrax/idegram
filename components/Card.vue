@@ -1,12 +1,20 @@
 <template>
-    <div class="ratio ratio-4x3">
-	<img alt="" :src="urlPublic" class="
+    <article class="mb-3">
+	<!-- Imagen -->
+	<div class="ratio ratio-4x3">
+	    <img alt="" :src="urlPublic" class="
 		  img
 		  object-fit-cover
 		  border
 		  rounded
-		  ">
-    </div>
+		      ">
+	</div>
+	<!-- Controles -->
+	<div class="d-flex justify-content-end">
+	    <button @click="addLike" class="btn btn-outline-primary p-3" aria-current="page">❤️ {{ likes }}</button>
+	    <button class="btn btn-outline-primary p-3">🗨️</button>
+	</div>
+    </article>
 </template>
 
 <script setup>
@@ -18,17 +26,27 @@
  const urlPublic = ref();
 
  const props = defineProps({
-     url: String
+     id: Number,
+     url: String,
+     likes: Number
  })
 
- onMounted(async () => {
 
-     const { data } = await supabase
+ onMounted(async () => {
+     // Obtener la URL publica de la imagen
+     const { data }  = await supabase
 	 .storage
 	 .from('photos')
 	 .getPublicUrl(props.url);
      urlPublic.value = data.publicUrl;
  })
+
+async function addLike() {
+     const { error } = await supabase
+	 .from('photos')
+	 .update({ likes: props.likes + 1 })
+	 .eq('id', props.id)
+ }
 
 
 </script>

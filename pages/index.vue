@@ -3,7 +3,7 @@
 	<Loading :show="verLoading" />
 	<button type="button" class="btn btn-success" @click="showModalNewPhoto = true">➕</button>
 	<!-- Listado de imagenes -->
-	<Card v-for="photo in photos" :url="photo.url" />
+	<Card v-for="photo in photos" :url="photo.url" :likes="photo.likes" :id="photo.id" />
 	<!-- Modal para subir una nueva imagen -->
 	<div class="modal" tabindex="-1" :class="{'d-block': showModalNewPhoto}">
 	    <div class="modal-dialog">
@@ -47,6 +47,15 @@
      photos.value = data;
  }
 
+ async function vigilarCambios() {
+     supabase
+	 .channel('any')
+	 .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'photos' }, payload => {
+	     obtenerFotos();
+	 })
+	 .subscribe()
+ }
+
  async function subirFoto() {
      photos.value = [];
      // Ver loading
@@ -84,6 +93,8 @@
      await obtenerFotos();
      // Ocultar loading
      verLoading.value = false;
+     // Vigilamos cambios en los likes
+     vigilarCambios();
  })
 
 </script>
